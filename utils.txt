@@ -1,17 +1,13 @@
 
 ï¿½ï¿½ï¿½ï¿½
 ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½Ò»ï¿½ï¿½
-=======
+
 ï¿½ï¿½ï¿½ï¿½ guohongyu
 
-<<<<<<< HEAD
-Ìï³ÉÁ¦£ºdiunilaomuhai
-Here comes Jonny£¡
-=======
-
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½diunilaomuhai
 Here comes Jonnyï¿½ï¿½
 
+
 my name is phwang!
->>>>>>> 8288a49ad6deff6a3c985fb4901d473709bf1d73
 
 yinliyuan add!!!
