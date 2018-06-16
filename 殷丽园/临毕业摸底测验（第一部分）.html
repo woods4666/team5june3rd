@@ -1,0 +1,961 @@
+<!DOCTYPE html><html><head><title>临毕业摸底测验（第一部分）</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style>
+.note-content  {font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimSun, Song, sans-serif;}
+
+</style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+<div><div class="toc"><div class="toc">
+<ul>
+<li><ul>
+<li><a href="#临毕业摸底测验第一部分">临毕业摸底测验（第一部分）</a><ul>
+<li><a href="#javascript-前端玩家必备技能">JavaScript （前端玩家必备技能）</a><ul>
+<li><a href="#1-elegetattributepropname-和-elepropname区别">1. ele.getAttribute(‘propName’) 和 ele.propName区别</a></li>
+<li><a href="#2-mouseover和mouseenter的区别">2. mouseover和mouseenter的区别</a></li>
+<li><a href="#3-什么是事件代理">3. 什么是事件代理</a></li>
+<li><a href="#4-localstorage和cookie的区别cookie和session的关系">4. localStorage和cookie的区别，cookie和session的关系！</a></li>
+<li><a href="#5-什么是闭包你在项目中哪一块用到了闭包">5. 什么是闭包，你在项目中哪一块用到了闭包！</a></li>
+<li><a href="#6-js中定义函数的方式有哪些区别是什么">6. js中定义函数的方式有哪些，区别是什么！</a></li>
+<li><a href="#7-说出你掌握的继承方式及优缺点并加以改进">7. 说出你掌握的继承方式及优缺点，并加以改进！</a></li>
+<li><a href="#8-说出es6和es5的区别">8. 说出ES6和ES5的区别！</a></li>
+<li><a href="#9-阐述js中的同步编程和异步编程以及你在项目中是如何来使用异步操作的">9. 阐述JS中的同步编程和异步编程，以及你在项目中是如何来使用异步操作的！</a></li>
+<li><a href="#10-实现一个promise">10. 实现一个Promise</a></li>
+</ul>
+</li>
+<li><a href="#http-ajax-跨域-18玩家必备技能初级玩家需要了解一些的">HTTP &amp;&amp; AJAX &amp;&amp; 跨域 （18+玩家必备技能，初级玩家需要了解一些的）</a><ul>
+<li><a href="#1-写出项目中经常用到的性能优化方案">1. 写出项目中经常用到的性能优化方案</a></li>
+<li><a href="#2-从浏览器地址栏输入url到显示页面中间都经历了什么尽可能写详细最好回答出tcp的三次握手和四次挥手以及浏览器加载页面的细节">2. 从浏览器地址栏输入URL到显示页面，中间都经历了什么（尽可能写详细，最好回答出TCP的三次握手和四次挥手，以及浏览器加载页面的细节）</a></li>
+<li><a href="#3-说出你所熟知的http状态码get和post有啥区别">3. 说出你所熟知的HTTP状态码！GET和POST有啥区别！</a></li>
+<li><a href="#4-什么是http报文你熟知的报文都有哪些">4. 什么是HTTP报文，你熟知的报文都有哪些！</a></li>
+<li><a href="#5-能说下304具体怎样实现吗">5. 能说下304具体怎样实现吗？</a></li>
+<li><a href="#6-跨域是什么http协议中如何判断跨域如何解决跨域问题">6. 跨域是什么？http协议中如何判断跨域？如何解决跨域问题？</a></li>
+<li><a href="#7-http2具体内容sdpy了解么">7. HTTP2具体内容？SDPY了解么？</a></li>
+<li><a href="#8-https如何实现tslssl是什么对称加密非对称加密在什么时候对什么数据加密">8. HTTPS如何实现？tsl/ssl是什么？对称加密、非对称加密在什么时候、对什么数据加密？</a></li>
+<li><a href="#9-dns劫持是什么">9. DNS劫持是什么？</a></li>
+<li><a href="#10-封装一个ajax库">10. 封装一个AJAX库！</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<h2 id="临毕业摸底测验第一部分">临毕业摸底测验（第一部分）</h2>
+
+<p><p class="note-tags "><code class="notebook">201802</code> </p></p>
+
+
+
+<h3 id="javascript-前端玩家必备技能">JavaScript （前端玩家必备技能）</h3>
+
+
+
+<h4 id="1-elegetattributepropname-和-elepropname区别">1. ele.getAttribute(‘propName’) 和 ele.propName区别</h4>
+
+<blockquote>
+  <p><code>ele.getAttribute('propName')</code>：是标准DOM操作文档元素属性的方法，具有通用性，可在任意文档上使用，返回元素在源文件中设置的属性（setAttribute） <br>
+  <code>e.propName</code>：通常是在HTML文档中访问特定元素的特性，浏览器解析元素后生成对应对象（如a标签生成HTMLAnchorElement），这些对象的特性会根据特定规则结合属性设置得到，对于没有对应特性的属性，只能使用getAttribute进行访问</p>
+  
+  <p><strong>[返回值不同]</strong> <br>
+  <code>e.getAttribute()</code>返回值是源文件中设置的值，类型是字符串或者null（有的实现返回”“） <br>
+  <code>e.propName</code>返回值可能是字符串、布尔值、对象、undefined等</p>
+  
+  <p>大部分attribute与property是一一对应关系，修改其中一个会影响另一个，如id，title等属性 <br>
+  一些布尔属性<code>&lt;input hidden/&gt;</code>的检测设置需要hasAttribute和removeAttribute来完成，或者设置对应property <br>
+  像<code>&lt;a href="../index.html"&gt;link&lt;/a&gt;</code>中href属性，转换成property的时候需要通过转换得到完整URL <br>
+  一些attribute和property不是一一对应如：form控件中<code>&lt;input value="hello"/&gt;</code>对应的是defaultValue，修改或设置value property修改的是控件当前值，setAttribute修改value属性不会改变value property</p>
+</blockquote>
+
+
+
+<h4 id="2-mouseover和mouseenter的区别">2. mouseover和mouseenter的区别</h4>
+
+<blockquote>
+  <ol><li rel="1">不论鼠标指针穿过被选元素或其子元素，都会触发 mouseover 事件。（对应事件为mouseout） <br>
+  只有在鼠标指针穿过被选元素时，才会触发 mouseenter 事件。（对应事件为mouseleave）</li>
+  <li rel="2">mouseover存在冒泡传播机制，而mouseenter阻止了冒泡传播，所以真是项目中为了避免嵌套混乱，使用mouseenter较多</li>
+  </ol>
+</blockquote>
+
+
+
+<h4 id="3-什么是事件代理">3. 什么是事件代理</h4>
+
+<blockquote>
+  <p>事件代理又称为事件委托，是利用事件的冒泡传播机制来实现的。 <br>
+  当我们需要对很多元素添加事件的时候，可以将事件添加到它们的父节点，从而将事件委托给父节点来触发事件行为。根据事件源(target)，可以知道操作的具体元素对象，从而做对应的事情。 <br>
+  适合用事件委托的事件：click，mousedown，mouseup，keydown，keyup，keypress。</p>
+</blockquote>
+
+
+
+<h4 id="4-localstorage和cookie的区别cookie和session的关系">4. localStorage和cookie的区别，cookie和session的关系！</h4>
+
+<blockquote>
+  <p>cookie的内容主要包括：名字、值、过期时间、路径和域。路径与域一起构成cookie的作用范围。若不设置时间，则表示这个cookie的生命期为浏览器会话期间，关闭浏览器窗口，cookie就会消失。这种生命期为浏览器会话期的cookie被称为会话cookie。 </p>
+  
+  <p>会话cookie一般不存储在硬盘而是保存在内存里，当然这个行为并不是规范规定的。若设置了过期时间，浏览器就会把cookie保存到硬盘上，关闭后再打开浏览器这些cookie仍然有效直到超过设定的过期时间。对于保存在内存里的cookie，不同的浏览器有不同的处理方式session机制。 </p>
+  
+  <p>当程序需要为某个客户端的请求创建一个session时，服务器首先检查这个客户端的请求里是否已包含了一个session标识（称为session id），如果已包含则说明以前已经为此客户端创建过session，服务器就按照session id把这个session检索出来使用（检索不到，会新建一个），如果客户端请求不包含session id，则为客户端创建一个session并且生成一个与此session相关联的session id，session id的值应该是一个既不会重复，又不容易被找到规律以仿造的字符串，这个session id将被在本次响应中返回给客户端保存。保存这个session id的方式可以采用cookie，这样在交互过程中浏览器可以自动的按照规则把这个标识发送给服务器。</p>
+  
+  <p><strong>localStorage和cookie的区别：</strong> <br>
+  ① cookie在浏览器与服务器之间来回传递。 <br>
+  sessionStorage和localStorage不会把数据发给服务器，仅在本地保存 <br>
+  ②数据有效期不同： <br>
+  cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。 <br>
+  sessionStorage：仅在当前浏览器窗口关闭前有效。 <br>
+  localStorage  始终有效，长期保存。 <br>
+  ③cookie数据还有路径的概念，可以限制cookie只属于某个路径下。 <br>
+  存储大小也不同，cookie数据不能超过4k，sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。 <br>
+  ④ 作用域不用 <br>
+  sessionStorage不在不同的浏览器窗口中共享； <br>
+  localStorage在所有同源窗口中都是共享的； <br>
+  cookie也是在所有同源窗口中都是共享的； <br>
+  WebStorage 支持事件通知机制，可以将数据更新的通知发送给监听者。Web Storage 的 api 接口使用更方便。 <br>
+  <strong>cookie和session的区别：</strong>  <br>
+  1、cookie数据存放在客户的浏览器上，session数据放在服务器上  <br>
+  2、cookie不是很安全，别人可以分析存放在本地的cookie并进行cookie欺骗，考虑到安全应当使用session  <br>
+  3、session会在一定时间内保存在服务器上，当访问增多，会比较占用你服务器的性能，考虑到减轻服务器性能方面，应当使用cookie  <br>
+  4、单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie  <br>
+  5、建议将登录信息等重要信息存放为session，其他信息如果需要保留，可以放在cookie中  <br>
+  6、session保存在服务器，客户端不知道其中的信心；cookie保存在客户端，服务器能够知道其中的信息  <br>
+  7、session中保存的是对象，cookie中保存的是字符串  <br>
+  8、session不能区分路径，同一个用户在访问一个网站期间，所有的session在任何一个地方都可以访问到，而cookie中如果设置了路径参数，那么同一个网站中不同路径下的cookie互相是访问不到的</p>
+</blockquote>
+
+
+
+<h4 id="5-什么是闭包你在项目中哪一块用到了闭包">5. 什么是闭包，你在项目中哪一块用到了闭包！</h4>
+
+<blockquote>
+  <p>闭包是JS中一个非常重要的机制，我们很多编程思想、业务逻辑、设计模式都是基于闭包完成的，先说一下我对闭包的理解：闭包就是函数执行形成一个私有作用域（不销毁），在这个作用域中的私有变量和外界互不干扰，而且作用域（栈）不销毁，这些私有变量存储的值也就保存下来了，所以整体来说闭包就是为了保护和保存变量的</p>
+  
+  <p>实际项目开发中，很多地方使用到了闭包，例如：</p>
+  
+  <ol><li rel="1">循环事件绑定之中，由于事件绑定是异步编程的，我们此时在循环的时候把索引存储起来（可以基于自定义属性存储，也可以基于闭包存储），后期需要使用的时候，向上级作用域查找使用即可</li>
+  <li rel="2">平时做业务逻辑的时候，我一般都是基于单例模式来管理代码的，这种单例的构建就应用到了闭包</li>
+  <li rel="3">我之前在学习资料上了解了柯理化函数思想，它其实也是基于闭包完成的</li>
+  <li rel="4">还有很多地方也应用了闭包，但是闭包比较占内存，我会尽量减少对它的使用，但是有些需求必须使用</li>
+  </ol>
+</blockquote>
+
+<pre class="prettyprint hljs-dark"><code class="language-javascript hljs"><div class="hljs-line"><span class="hljs-comment">//柯理化函数思想</span>
+</div><div class="hljs-line"><span class="hljs-built_in">Function</span>.prototype.bind = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bind</span>(<span class="hljs-params">context, ...arg</span>)</span>{
+</div><div class="hljs-line">    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span>{
+</div><div class="hljs-line">        fn.call(context,...arg);
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">}
+</div><div class="hljs-line"><span class="hljs-built_in">document</span>.onclick = fn.bind(obj, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>);
+</div></code></pre>
+
+
+
+<h4 id="6-js中定义函数的方式有哪些区别是什么">6. js中定义函数的方式有哪些，区别是什么！</h4>
+
+<blockquote>
+  <p>定义函数的方式：</p>
+  
+  <ol><li rel="1">函数声明：<code>function fn(){}</code></li>
+  <li rel="2">函数表达式：<code>var fn = function(){}</code></li>
+  <li rel="3">ES6的箭头函数：<code>let fn = ()=&gt;{}</code></li>
+  <li rel="3">构造函数方式：<code>var fn = new Function();</code></li>
+  </ol>
+  
+  <p><strong>区别：</strong></p>
+  
+  <ol><li rel="1">函数声明方式，存在变量提升机制，不管在哪声明的，任何位置都可以执行；虽然2和4两种方式也存在变量提升机制，但只是提前声明，不会定义</li>
+  </ol>
+</blockquote>
+
+
+
+<h4 id="7-说出你掌握的继承方式及优缺点并加以改进">7. 说出你掌握的继承方式及优缺点，并加以改进！</h4>
+
+<p><strong>1. <code>原型继承：B.prototype = new A();</code></strong></p>
+
+<blockquote>
+  <p>让子类的原型指向父类的一个实例</p>
+  
+  <ul><li>A的实例本身具备父类A的私有属性和公有方法，子类B的原型指向它，那么子类B的实例就可以找到这些属性方法了</li>
+  <li>和传统后台语言的继承不一样，子类继承父类，并不是把父类的属性方法克隆一份给子类的（这样处理子类和父类就没有直接关系了），JS中的原型继承是让子类和父类建立原型链接机制，子类的实例调取父类原型上的方法都是基于原型链机制完成的</li>
+  </ul>
+  
+  <p><strong>原型继承存在的问题</strong>：</p>
+  
+  <ul><li>父类实例私有属性和公有的属性方法都变为子类实例的公有属性方法了</li>
+  <li>如果子类B的原型上之前有属性方法，重新执行A的实例后，之前的方法都没用  了</li>
+  <li>子类可以重写父类原型上的方法（重写），子类和父类还有关系的</li>
+  </ul>
+</blockquote>
+
+<pre class="prettyprint hljs-dark"><code class="language-javascript hljs"><div class="hljs-line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">A</span>(<span class="hljs-params"></span>)</span>{
+</div><div class="hljs-line">    <span class="hljs-keyword">this</span>.x = <span class="hljs-number">100</span>;
+</div><div class="hljs-line">}
+</div><div class="hljs-line">A.prototype = {
+</div><div class="hljs-line">    <span class="hljs-attr">constructor</span>: A,
+</div><div class="hljs-line">    <span class="hljs-attr">getX</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{
+</div><div class="hljs-line">        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.x);
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">};
+</div><div class="hljs-line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">B</span>(<span class="hljs-params"></span>)</span>{
+</div><div class="hljs-line">    <span class="hljs-keyword">this</span>.y = <span class="hljs-number">200</span>;
+</div><div class="hljs-line">}
+</div><div class="hljs-line">B.prototype = <span class="hljs-keyword">new</span> A();
+</div><div class="hljs-line">B.prototype.__proto__.getX = <span class="hljs-literal">null</span>;  <span class="hljs-comment">//把父类A的原型上的getX重写为null，A的其他实例也会受到影响</span>
+</div></code></pre>
+
+<p><strong>2. <code>call继承</code></strong></p>
+
+<blockquote>
+  <p>把父类A作为普通函数执行，让A中的this变为B的实例，相当于给B的实例增加一些属性和方法 <br>
+  <strong>弊端</strong>：把父类A当作普通函数执行，和父类原型没啥关系了，仅仅是把A中的私有属性变为子类B实例的私有属性而已，A原型上的公有属性方法和B及它的实例没啥关系</p>
+</blockquote>
+
+<pre class="prettyprint hljs-dark"><code class="language-javascript hljs"><div class="hljs-line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">B</span>(<span class="hljs-params"></span>)</span>{
+</div><div class="hljs-line">    A.call(<span class="hljs-keyword">this</span>);       <span class="hljs-comment">//call继承 （把A执行，让A中的this变为f）</span>
+</div><div class="hljs-line">    <span class="hljs-keyword">this</span>.y = <span class="hljs-number">200</span>;
+</div><div class="hljs-line">}
+</div><div class="hljs-line"><span class="hljs-keyword">let</span> f = <span class="hljs-keyword">new</span> B();
+</div></code></pre>
+
+<p><strong>3. <code>寄生组合继承</code></strong></p>
+
+<blockquote>
+  <p>A的私有变为B的私有，A的公有变为B的公有</p>
+</blockquote>
+
+<pre class="prettyprint hljs-dark"><code class="language-javascript hljs"><div class="hljs-line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">B</span>(<span class="hljs-params"></span>)</span>{
+</div><div class="hljs-line">    A.call(<span class="hljs-keyword">this</span>);    <span class="hljs-comment">//基于call把A的私有变为B的私有 f.x = 100</span>
+</div><div class="hljs-line">    <span class="hljs-keyword">this</span>.y = <span class="hljs-number">200</span>;
+</div><div class="hljs-line">}
+</div><div class="hljs-line"><span class="hljs-comment">//B.prototype = A.prototype;    //一般都不这样处理，因为这种模式可以轻易修改父类A原型上的东西（重写“太方便”），这样也会导致A的其它实例受到影响</span>
+</div><div class="hljs-line">B.prototype = <span class="hljs-built_in">Object</span>.create(A.prototype);   <span class="hljs-comment">//这种方式创建的是一个没有任何私有属性的空对象，指向A的原型，这样B的公有中就不会存在A的私有属性了；和原型继承（B.prototype = new A()）的唯一区别：原型继承创建的A的实例虽然指向了A的原型，但是实例中不是空的，存放了A的私有属性，这些属性变为B的公有属性</span>
+</div></code></pre>
+
+<p><strong>4. <code>ES6中class类实现继承</code></strong></p>
+
+<pre class="prettyprint hljs-dark"><code class="language-javascript hljs"><div class="hljs-line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>{
+</div><div class="hljs-line">    <span class="hljs-keyword">constructor</span>(n){<span class="hljs-keyword">this</span>.x = n;}
+</div><div class="hljs-line">    getX(){<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.x);}
+</div><div class="hljs-line">}
+</div><div class="hljs-line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">A</span></span>{      <span class="hljs-comment">//extends相当于原型继承</span>
+</div><div class="hljs-line">    <span class="hljs-keyword">constructor</span>(){
+</div><div class="hljs-line">        <span class="hljs-keyword">super</span>();      <span class="hljs-comment">//类似于call继承：在这里super相当于把A的constructor给执行了，并且让方法中的this是B的实例，super当中传递的实参都是在给A的constructor传递</span>
+</div><div class="hljs-line">        <span class="hljs-keyword">this</span>.y = <span class="hljs-number">200</span>;
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">    getX(){<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.x);}
+</div><div class="hljs-line">}
+</div><div class="hljs-line">Fn.prototype.BB = <span class="hljs-number">100</span>;
+</div><div class="hljs-line"><span class="hljs-keyword">let</span> f = <span class="hljs-keyword">new</span> Fn(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>);
+</div></code></pre>
+
+<h4 id="8-说出es6和es5的区别">8. 说出ES6和ES5的区别！</h4>
+
+<p><code>ES6 的模块自动采用严格模式，不管你有没有在模块头部加上"use strict"。</code> <br>
+<strong>严格模式主要有以下限制：</strong></p>
+
+<ul><li>变量必须声明后再使用</li>
+<li>函数的参数不能有同名属性，否则报错</li>
+<li>不能使用with语句</li>
+<li>不能对只读属性赋值，否则报错</li>
+<li>不能使用前缀 0 表示八进制数，否则报错</li>
+<li>不能删除不可删除的属性，否则报错</li>
+<li>不能删除变量delete prop，会报错，只能删除属性delete global[prop]</li>
+<li>eval不会在它的外层作用域引入变量</li>
+<li>eval和arguments不能被重新赋值</li>
+<li>arguments不会自动反映函数参数的变化</li>
+<li>不能使用arguments.callee</li>
+<li>禁止this指向全局对象</li>
+<li>不能使用fn.caller和fn.arguments获取函数调用的堆栈</li>
+<li>增加了保留字（比如protected、static和interface）;</li>
+</ul>
+
+<p><strong>ES6新增语法</strong></p>
+
+<blockquote>
+  <p><code>let/const</code></p>
+  
+  <ul><li>let不存在变量提升机制（变量不允许在声明之前使用）</li>
+  <li>let不允许重复声明</li>
+  <li>在全局作用域中基于let声明的变量不是window的一个属性，和他没关系</li>
+  <li>typeof 未被声明的变量 =&gt; 不是undefined，而是报错（暂时性死区）</li>
+  <li>let会形成块级作用域（类似于私有作用域，大部分大括号都会形成块级作用域）</li>
+  </ul>
+  
+  <p><code>解构赋值</code></p>
+  
+  <p><code>...</code>拓展、剩余、展开运算符 <br>
+  <code>箭头函数</code></p>
+  
+  <ul><li>没有arguments，但是可以基于…arg获取实参集合（结果是一个数组）</li>
+  <li>没有自己的this，箭头函数中的this是上下文中的this</li>
+  </ul>
+  
+  <p><code>模版字符串</code></p>
+  
+  <p><code>Promise（async/await）</code> <br>
+  <code>class（ES6中创建类的）</code> <br>
+  <code>interator（for in 循环）</code> <br>
+  <code>Map/Set</code> <br>
+  …</p>
+</blockquote>
+
+<h4 id="9-阐述js中的同步编程和异步编程以及你在项目中是如何来使用异步操作的">9. 阐述JS中的同步编程和异步编程，以及你在项目中是如何来使用异步操作的！</h4>
+
+<blockquote>
+  <p><code>同步</code>：在一个线程上（主栈/主任务队列）同一个时间只能做一件事情，当前事情完成才能进行下一个事情（先把一个任务进栈执行，执行完出栈，再把下一个任务进栈…） <br>
+  <code>异步</code>：在主栈中执行一个任务，但是发现这个任务是一个异步的操作，我们会把它移出主栈，放到等待任务队列中（此时浏览器会分配其它线程监听异步任务是否到达指定的执行时间），如果主栈执行完，监听者会把到达时间的异步任务重新放到主栈中执行… <br>
+  [宏任务：macro task]</p>
+  
+  <ul><li>定时器、时间绑定、ajax、回调函数、node中fs可以进行异步的I/O操作</li>
+  </ul>
+  
+  <p>[微任务：micro task]</p>
+  
+  <ul><li>process.nextTick(node中的)</li>
+  <li>Promise(async/await) =&gt; Promise并不是完全的同步，当在Excutor中执行resolve或者reject的时候，此时是异步操作，会先执行then/catch等，当主栈完成后，才会再去调用resolve/reject把存放的方法执行</li>
+  </ul>
+  
+  <p>执行顺序优先级：sync =&gt; micro =&gt; macro <br>
+  定时器设置的等待时间是最小等待时间 <br>
+  所有JS中的异步编程仅仅是根据某些机制来管控任务的执行顺序，不存在同时执行两个任务这一说法</p>
+</blockquote>
+
+<h4 id="10-实现一个promise">10. 实现一个Promise</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-javascript hljs"><div class="hljs-line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Promise</span> </span>{
+</div><div class="hljs-line">    <span class="hljs-keyword">constructor</span>(excutor) {
+</div><div class="hljs-line">        <span class="hljs-keyword">this</span>.status = <span class="hljs-string">'pending'</span>;
+</div><div class="hljs-line">        <span class="hljs-keyword">this</span>.value = <span class="hljs-literal">undefined</span>;
+</div><div class="hljs-line">        <span class="hljs-keyword">this</span>.fulfilledAry = [];
+</div><div class="hljs-line">        <span class="hljs-keyword">this</span>.rejectedAry = [];
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">        <span class="hljs-comment">//执行excutor</span>
+</div><div class="hljs-line">        <span class="hljs-keyword">let</span> resolveFn = <span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+</div><div class="hljs-line">            <span class="hljs-keyword">let</span> timer = setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+</div><div class="hljs-line">                clearTimeout(timer);
+</div><div class="hljs-line">                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.status !== <span class="hljs-string">'pending'</span>) <span class="hljs-keyword">return</span>;
+</div><div class="hljs-line">                <span class="hljs-keyword">this</span>.status = <span class="hljs-string">'fulfilled'</span>;
+</div><div class="hljs-line">                <span class="hljs-keyword">this</span>.value = result;
+</div><div class="hljs-line">                <span class="hljs-keyword">this</span>.fulfilledAry.forEach(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> item(<span class="hljs-keyword">this</span>.value));
+</div><div class="hljs-line">            });
+</div><div class="hljs-line">        };
+</div><div class="hljs-line">        <span class="hljs-keyword">let</span> rejectFn = <span class="hljs-function">(<span class="hljs-params">reason</span>) =&gt;</span> {
+</div><div class="hljs-line">            <span class="hljs-keyword">let</span> timer = setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+</div><div class="hljs-line">                clearTimeout(timer);
+</div><div class="hljs-line">                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.status !== <span class="hljs-string">'pending'</span>) <span class="hljs-keyword">return</span>;
+</div><div class="hljs-line">                <span class="hljs-keyword">this</span>.status = <span class="hljs-string">'rejected'</span>;
+</div><div class="hljs-line">                <span class="hljs-keyword">this</span>.value = reason;
+</div><div class="hljs-line">                <span class="hljs-keyword">this</span>.rejectedAry.forEach(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> item(<span class="hljs-keyword">this</span>.value));
+</div><div class="hljs-line">            });
+</div><div class="hljs-line">        };
+</div><div class="hljs-line">        <span class="hljs-keyword">try</span> {
+</div><div class="hljs-line">            excutor(resolveFn, rejectFn);
+</div><div class="hljs-line">        } <span class="hljs-keyword">catch</span> (err) {
+</div><div class="hljs-line">            <span class="hljs-comment">//有异常信息按照rejected状态处理</span>
+</div><div class="hljs-line">            rejectFn(err);
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">    }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">    then(fulfilledCallback, rejectedCallback) {
+</div><div class="hljs-line">        <span class="hljs-comment">//处理不传递的状况</span>
+</div><div class="hljs-line">        <span class="hljs-keyword">typeof</span> fulfilledCallback !== <span class="hljs-string">'function'</span> ? fulfilledCallback = <span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> result : <span class="hljs-literal">null</span>;
+</div><div class="hljs-line">        <span class="hljs-keyword">typeof</span>  rejectedCallback !== <span class="hljs-string">'function'</span> ? rejectedCallback = <span class="hljs-function"><span class="hljs-params">reason</span> =&gt;</span> {
+</div><div class="hljs-line">            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(reason.message)
+</div><div class="hljs-line">        } : <span class="hljs-literal">null</span>;
+</div><div class="hljs-line">        <span class="hljs-comment">//返回一个新的promise实例</span>
+</div><div class="hljs-line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+</div><div class="hljs-line">            <span class="hljs-keyword">this</span>.fulfilledAry.push(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+</div><div class="hljs-line">                <span class="hljs-keyword">try</span> {
+</div><div class="hljs-line">                    <span class="hljs-keyword">let</span> x = fulfilledCallback(<span class="hljs-keyword">this</span>.value);
+</div><div class="hljs-line">                    x <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Promise</span> ? x.then(resolve, reject) : resolve(x);
+</div><div class="hljs-line">                } <span class="hljs-keyword">catch</span> (err) {
+</div><div class="hljs-line">                    reject(err);
+</div><div class="hljs-line">                }
+</div><div class="hljs-line">            });
+</div><div class="hljs-line">            <span class="hljs-keyword">this</span>.rejectedAry.push(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+</div><div class="hljs-line">                <span class="hljs-keyword">try</span> {
+</div><div class="hljs-line">                    <span class="hljs-keyword">let</span> x = rejectedCallback(<span class="hljs-keyword">this</span>.value);
+</div><div class="hljs-line">                    x <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Promise</span> ? x.then(resolve, reject) : resolve(x);
+</div><div class="hljs-line">                } <span class="hljs-keyword">catch</span> (err) {
+</div><div class="hljs-line">                    reject(err);
+</div><div class="hljs-line">                }
+</div><div class="hljs-line">            });
+</div><div class="hljs-line">        });
+</div><div class="hljs-line">    }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">    <span class="hljs-keyword">catch</span>(rejectCallback) {
+</div><div class="hljs-line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.then(<span class="hljs-literal">null</span>, rejectCallback);
+</div><div class="hljs-line">    }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">    <span class="hljs-keyword">static</span> all(promiseAry = []) {
+</div><div class="hljs-line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+</div><div class="hljs-line">            <span class="hljs-keyword">let</span> count = <span class="hljs-number">0</span>,    <span class="hljs-comment">//成功的数量</span>
+</div><div class="hljs-line">                result = [];  <span class="hljs-comment">//成功后的结果</span>
+</div><div class="hljs-line">            promiseAry.forEach(<span class="hljs-function">(<span class="hljs-params">p, index</span>) =&gt;</span> {
+</div><div class="hljs-line">                p.then(<span class="hljs-function">(<span class="hljs-params">val</span>) =&gt;</span> {
+</div><div class="hljs-line">                    count++;
+</div><div class="hljs-line">                    result[index] = val;  <span class="hljs-comment">//=&gt;索引需要和promiseAry对应上，保证结果的顺序和数组顺序一致</span>
+</div><div class="hljs-line">                    <span class="hljs-keyword">if</span> (count === promiseAry.length) {
+</div><div class="hljs-line">                        resolve(result);
+</div><div class="hljs-line">                    }
+</div><div class="hljs-line">                }, reject);
+</div><div class="hljs-line">            })
+</div><div class="hljs-line">        });
+</div><div class="hljs-line">    }
+</div><div class="hljs-line">}
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line"><span class="hljs-built_in">module</span>.exports = <span class="hljs-built_in">Promise</span>;
+</div></code></pre>
+
+
+
+<p><img longdesc="./Promise A+.png" alt="Alt text" title="" type="image/png" src="data:image/png;base64,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" class=""></p>
+
+<h3 id="http-ajax-跨域-18玩家必备技能初级玩家需要了解一些的">HTTP &amp;&amp; AJAX &amp;&amp; 跨域 （18+玩家必备技能，初级玩家需要了解一些的）</h3>
+
+
+
+<h4 id="1-写出项目中经常用到的性能优化方案">1. 写出项目中经常用到的性能优化方案</h4>
+
+<blockquote>
+  <ul><li>1.在JS中尽量减少闭包的使用，原因：闭包会产生不释放的栈内存。 <br>
+  A：循环给元素做事件绑定的时候尽可能的把后期需要的信息，例如索引存储到元素的自定义上，而不是创建闭包存储。 <br>
+  B：可以在最外层形成一个闭包，把一些后续需要的公共信息进行存储，而不是每一个方法都创建闭包（例如单例模式） <br>
+  C：尽可能的手动释放不被占用的内存]</li>
+  <li>2.尽量合并css和js文件，原理是减少HTTP请求次数，尽可能的把合并后的代码进行压缩，减少HTTP请求资源的大小。 <br>
+  A：webpack这种自动化构建工具，可以帮我们实现代码的合并和压缩，（工程化开发） <br>
+  B：在移动端开发中，或者追求高性能的pc端开发，例如百度首页，如果css或者js不是需要很多，我们可以选择把css和js编程内嵌式（也就是直接写在HTML里）。</li>
+  <li>3.尽量使用字体图标或者SVG图标来代替传统的PNG等格式的图片，（因为字体图片等是矢量图（基于代码编写出来的）放大不会变形，而且渲染速度快，相对比位图要小一点）</li>
+  <li>4.减少对DOM的操作，主要是减少DOM重绘和回流。 <br>
+  A：关于重排的分离读写 <br>
+  B：使用文档碎片或者字符串拼接做数据绑定（DOM的动态创建）</li>
+  <li>5在JS避免”嵌套循环”（这种会和外增加很多循环次数，）和死循环（一旦晕倒死循环浏览器就卡壳了）</li>
+  <li>6.采用图片的懒加载，延迟加载。 <br>
+  A 目的是为了减少页面第一次加载过程中HTTP的请求次数 <br>
+  B 步骤：开始加载页面的时候所有的真实图片都不去发送HTTP请求加载，而是给一张占位的背景图，当页面加载完，而且图片在可视区域内我们再去做图片加载</li>
+  <li>7.利用浏览器和服务器的缓存技术，304缓存，把一些不经常更新的静态资源文件，例如JS，css，静态图片等都可以做缓存</li>
+  <li>8.尽可能使用事件委托（事件处理）来处理事件绑定的操作，减少DOM频繁操作，其中包括每一个DOM元素做事件绑定</li>
+  <li>9.尽量减少CSS表达式的使用、 <br>
+  A：expression; <br>
+  例如：left:expression(documen.body.offsetWideth-100+”px”);</li>
+  <li>10.css选择器解析规则从右向左解析<code>.container .link a{...}</code>先找到所有A在筛选..link样式类的，再次筛选是在.container样式类中的…先找到所有的A，操作起来的消耗性能的，我们使用css是选择器的时候尽可能减少对标签选择器的使用</li>
+  <li>11.css雪碧图css sprite,把所有相对较小的资源图片汇总到一张大图上，后期我么只需要把大图加载下来，用背景定位的方式展示对应的小图即可</li>
+  <li>12减少本地cookie的使用，最主要的是减少本地cookie存储内容的大小，因为客户端操作cookie的时候，这些信息总在客户端和服务器端传来传去</li>
+  <li>13.页面中的数据获取采用异步编程和延迟分批加载 <br>
+  A：使用异步获取数据是为了降低HTTP通道的堵塞不会因为数据没有请求回来耽误下面信息的渲染，提高页面的打开速度（我们可以这样处理，需要动态绑定数据的区域先隐藏等数据返回并且绑定完成后在让其显示。） <br>
+  延迟分批加载类似于图片懒加载，是为了减少第一次页面加载时候的HTTP请求次数。 <br>
+  -14.页面中音视频标签，我们为了不让页面加载的时候就去加载这些资源，要不然加载会很慢，方案只需要设置preload=“none”等待页面加载完成，音视频播放的时候我们在去加载音视频资源</li>
+  <li>15在客户端和服务器端进行信息交互的时候，对于多项数据我们尽可能基于json格式来进行传送（json格式的数据处理方便，资源小），相对于XML格式的传输才会有这个优势</li>
+  <li>16.尽可能实现js的封装，低耦合高内聚，减少页面中的冗余代码</li>
+  <li>17 css设置定位后，最好使用zindex改变盒子的层级，让所有的盒子不在相同的平面上，这样后续处理的时候，性能有那么一丢丢的提高。</li>
+  <li>18.基于Ajax的get请求进行数据交互的时候，根据需求可以让其产生缓存（这个缓存不是304缓存）这样下一次从相同地址获取的数据是上一次缓存的数据，但是很少用项目中一般刻意清除这个缓存的时候偏多</li>
+  <li>19.减少对于filter滤镜的使用</li>
+  <li>20.css导入减少@import导入式，因为@import是同步操作，只有把这个对应的css导入，才会向下加载，而link是异步操作</li>
+  <li>21.配置Etag</li>
+  <li>22  使用window.requestAnimationFram(js中的桢动画)代替传统的定时器动画</li>
+  <li>23 .减少递归的使用，避免死递归，避免由于递归导致的栈内存嵌套（建议使用伪递归）</li>
+  <li>24 .避免使用iframe(不仅不好管控样式，而且相当于在a页面中加载了其他页面，消耗较大)</li>
+  <li>25.利用h5中提供的localstorage本地存储或者mainfest离线缓存，做些信息的本地存储，下一次加载页面的时候直接从本地获取，减少http请求次数。</li>
+  <li>26..基于script调取js的时候，可以使用 defer 或者 async 来异步加载</li>
+  </ul>
+  
+  <p><strong>重量级优化：CDN加速（烧钱机器）</strong> <br>
+  地域式服务器分布，在热门地域附近设置服务器机组，附近的用户访问的都是离其最近的机组（提高访问速度）</p>
+  
+  <p><strong>额外：</strong> <br>
+  1.一般把css放在body上，JS放在body下，原因是让其先加载CSS后加载JS。为了保证页面渲染过程中元素是带着样式渲染的，而js一般都是用来操作DOM元素的，需要等到元素加载完在操作。 <br>
+  2.能用css搞定的绝对不用JS，能用原生JS搞定的绝对不用插件，绝对不是用FLASH除了音频的低版本浏览器播放 <br>
+  =》css处理动画等功能性能优于JS，而且css中的transfrom变形还开启了硬件加速。 <br>
+  3.js中尽量减少对eval的使用，因为js合并压缩的时候，可能出现由于符号不完善，导致的代码执行优先级优先于错误代码 <br>
+  4.使用keep-alive实现客户端和服务器端的长连接 <br>
+  5.尽量使用设计模式来管理我们的代码（单例、构造、Promise、发布订阅），方便后期的升级和维护 <br>
+  6.开启服务器端的gzip压缩（这个压缩可以有效减少请求资源文件的大小），其实客户端的图片等资源也是可以进行压缩的（但是对于24位的位图，压缩后可能会变模糊） <br>
+  7.页面中不要出现无效的连接，利于seo优化，还有其他 <br>
+  8.避免使用with语句（非常耗性能）</p>
+</blockquote>
+
+
+
+<h4 id="2-从浏览器地址栏输入url到显示页面中间都经历了什么尽可能写详细最好回答出tcp的三次握手和四次挥手以及浏览器加载页面的细节">2. 从浏览器地址栏输入URL到显示页面，中间都经历了什么（尽可能写详细，最好回答出TCP的三次握手和四次挥手，以及浏览器加载页面的细节）</h4>
+
+<ol><li rel="1">在浏览器地址栏输入URL</li>
+<li rel="2">浏览器查看缓存，如果请求资源在缓存中并且新鲜，跳转到转码步骤 <br>
+如果资源未缓存，发起新请求 <br>
+如果已缓存，检验是否足够新鲜，足够新鲜直接提供给客户端，否则 <br>
+与服务器进行验证。 <br>
+检验新鲜通常有两个HTTP头进行控制 Expires 和 Cache-Control ： <br>
+HTTP1.0提供Expires，值为一个绝对时间表示缓存新鲜日期 <br>
+HTTP1.1增加了Cache-Control: max-age=,值为以秒为单位的最 <br>
+大新鲜时间</li>
+<li rel="3">浏览器解析URL获取协议，主机，端口，path</li>
+<li rel="4">浏览器组装一个HTTP（GET）请求报文</li>
+<li rel="5">浏览器获取主机ip地址，过程如下： <br>
+浏览器缓存 <br>
+本机缓存 <br>
+hosts文件 <br>
+路由器缓存 <br>
+ISP DNS缓存 <br>
+DNS递归查询（可能存在负载均衡导致每次IP不一样）</li>
+<li rel="6">打开一个socket与目标IP地址，端口建立TCP链接，三次握手如下： <br>
+客户端发送一个TCP的SYN=1，Seq=X的包到服务器端口 <br>
+服务器发回SYN=1， ACK=X+1， Seq=Y的响应包 <br>
+客户端发送ACK=Y+1， Seq=Z</li>
+<li rel="7">TCP链接建立后发送HTTP请求</li>
+<li rel="8">服务器接受请求并解析，将请求转发到服务程序，如虚拟主机使用HTTP <br>
+Host头部判断请求的服务程序</li>
+<li rel="9">服务器检查HTTP请求头是否包含缓存验证信息如果验证缓存新鲜，返回 <br>
+304等对应状态码</li>
+<li rel="10">处理程序读取完整请求并准备HTTP响应，可能需要查询数据库等操作</li>
+<li rel="11">服务器将响应报文通过TCP连接发送回浏览器</li>
+<li rel="12">浏览器接收HTTP响应，然后根据情况选择关闭TCP连接或者保留重用，关 <br>
+闭TCP连接的四次握手如下： <br>
+主动方发送Fin=1， Ack=Z， Seq= X报文 <br>
+被动方发送ACK=X+1， Seq=Z报文 <br>
+被动方发送Fin=1， ACK=X， Seq=Y报文 <br>
+主动方发送ACK=Y， Seq=X报文</li>
+<li rel="13">浏览器检查响应状态吗：是否为1XX，3XX， 4XX， 5XX，这些情况处理 <br>
+与2XX不同</li>
+<li rel="14">如果资源可缓存，进行缓存</li>
+<li rel="15">对响应进行解码（例如gzip压缩）</li>
+<li rel="16">根据资源类型决定如何处理（假设资源为HTML文档）</li>
+<li rel="17">解析HTML文档，构件DOM树，下载资源，构造CSSOM树，执行js脚 <br>
+本，这些操作没有严格的先后顺序，以下分别解释</li>
+<li rel="18">构建DOM树： <br>
+Tokenizing：根据HTML规范将字符流解析为标记 <br>
+Lexing：词法分析将标记转换为对象并定义属性和规则 <br>
+DOM construction：根据HTML标记关系将对象组成DOM树</li>
+<li rel="19">解析过程中遇到图片、样式表、js文件，启动下载</li>
+<li rel="20">构建CSSOM树： <br>
+Tokenizing：字符流转换为标记流 <br>
+Node：根据标记创建节点 <br>
+CSSOM：节点创建CSSOM树</li>
+<li rel="21">根据DOM树和CSSOM树构建渲染树: <br>
+从DOM树的根节点遍历所有可见节点，不可见节点包括： <br>
+script , meta 这样本身不可见的标签。2)被css隐藏的节点，如 <br>
+display: none <br>
+对每一个可见节点，找到恰当的CSSOM规则并应用 <br>
+发布可视节点的内容和计算样式</li>
+<li rel="22">js解析如下： <br>
+浏览器创建Document对象并解析HTML，将解析到的元素和文本节 <br>
+点添加到文档中，此时document.readystate为loading <br>
+HTML解析器遇到没有async和defer的script时，将他们添加到文档 <br>
+中，然后执行行内或外部脚本。这些脚本会同步执行，并且在脚本下 <br>
+载和执行时解析器会暂停。这样就可以用document.write()把文本插 <br>
+入到输入流中。同步脚本经常简单定义函数和注册事件处理程序，他 <br>
+们可以遍历和操作script和他们之前的文档内容 <br>
+当解析器遇到设置了async属性的script时，开始下载脚本并继续解析 <br>
+文档。脚本会在它下载完成后尽快执行，但是解析器不会停下来等它 <br>
+下载。异步脚本禁止使用document.write()，它们可以访问自己 <br>
+script和之前的文档元素 <br>
+当文档完成解析，document.readState变成interactive <br>
+所有defer脚本会按照在文档出现的顺序执行，延迟脚本能访问完整 <br>
+文档树，禁止使用document.write() <br>
+浏览器在Document对象上触发DOMContentLoaded事件 <br>
+此时文档完全解析完成，浏览器可能还在等待如图片等内容加载，等 <br>
+这些内容完成载入并且所有异步脚本完成载入和执行， <br>
+document.readState变为complete,window触发load事件</li>
+<li rel="23">显示页面（HTML解析过程中会逐步显示页面）</li>
+</ol>
+
+<h4 id="3-说出你所熟知的http状态码get和post有啥区别">3. 说出你所熟知的HTTP状态码！GET和POST有啥区别！</h4>
+
+<p>状态码：</p>
+
+<blockquote>
+  <p>根据状态码能够清楚的反映出当前交互的结果及原因</p>
+  
+  <ul><li>200 OK 成功（只能证明服务器成功返回信息了，但是信息不一定是你业务需要的）</li>
+  <li>301 Moved Permanently 永久转移（永久重定向） <br>
+  =&gt; 域名更改，访问原始域名重定向到新的域名</li>
+  <li>302 临时转移（临时重定向 =&gt; 307） <br>
+  =&gt; 网址现在是基于https协议运作的，如果访问的是http协议，会基于307重定向到https协议上 <br>
+  =&gt; 302一般用作服务器负载均衡：当一台服务器达到最大并发数的时候，会把后续访问的用户临时转移到其它的服务器机组上处理 <br>
+  =&gt; 偶尔真实项目中会把所有的图片放到单独的服务器上（图片处理服务器），这样减少主服务器的压力，当用户向主服务器访问图片的时候，主服务器都把它转移到图片服务器上处理</li>
+  <li>304 Not Modified 设置缓存 <br>
+  =&gt; 对于不经常更新到资源文件，例如：CSS/JS/HTML/IMG等，服务器会结合客户端设置304缓存，第一次加载过这些资源就缓存到客户端了，下次再获取的时候，是从缓存中获取；如果资源更新了，服务器端会通过最后修改时间来强制让客户端从服务器重新拉取；基于ctrl+F5强制刷新页面，304做的缓存就没有用了</li>
+  <li>400 Bad Request 请求参数有误</li>
+  <li>401 Unauthorized 无权限访问</li>
+  <li>404 Not Found 找不到资源（地址不存在）</li>
+  <li>413 Request Entity Too Large 和服务器交互的内容资源超过服务器最大限制</li>
+  <li>500 Internal Server Error 未知的服务器错误</li>
+  <li>503 Service Unavailable 服务器超负荷</li>
+  </ul>
+</blockquote>
+
+<p>GET VS POST</p>
+
+<blockquote>
+  <p><strong>[传递给服务器信息的方式不一样]</strong> <br>
+  GET是基于url地址<strong>问号传参</strong>的方式把信息传递给服务器，POST是基于<strong>请求主体</strong>把信息传递给服务器</p>
+</blockquote>
+
+<pre class="prettyprint hljs-dark"><code class="hljs scheme"><div class="hljs-line">[<span class="hljs-name">GET</span>]
+</div><div class="hljs-line">xhr.open(<span class="hljs-symbol">'get</span>', <span class="hljs-symbol">'stu/student?xxx=xxx&amp;xxx=xxx</span>')<span class="hljs-comment">;</span>
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">[<span class="hljs-name">POST</span>]
+</div><div class="hljs-line">xhr.send(<span class="hljs-symbol">'xxx=xxx&amp;xxx=xxx</span>')<span class="hljs-comment">;</span>
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">xhr.send(<span class="hljs-name">JSON.stringify</span>({id: <span class="hljs-number">1000</span>, lx: <span class="hljs-number">2000</span>}))<span class="hljs-comment">; //请求主体中传递给服务器的是JSON格式的字符串，但是真实项目中常用的是url-encode格式的字符串"id=1000&amp;lx=2000"</span>
+</div></code></pre>
+
+<blockquote>
+  <p>GET一般应用于拿（给服务器的会少一些），而POST给服务器的很多，如果POST是基于问号传参方式来搞会出现一些问题：url会拼接很长，浏览器对于url的长度有最大限度（谷歌8KB 火狐7KB IE2KB…），超过的部分浏览器就把它截掉了 =&gt; 所有GET请求可以基于url传参，而post都是使用请求主体传递（请求主体理论上是没有限制的，真实项目中我们会自己做大小限制，防止上传过大信息导致请求迟迟完不成）</p>
+</blockquote>
+
+<p><code>[get不安全，post相对安全]</code> <br>
+因为get是基于’问号传参’把信息传递服务器的，容器被骇客进行url劫持，post是基于请求主体传递的，相对来说不好被劫持：所以登录、注册等涉及安全性的交互操作，我们都应该用post请求</p>
+
+<p><code>[get会产生不可控制的缓存，post不会]</code> <br>
+不可控：不是想要就要，想不要就不要的，这是浏览器自主记忆的缓存，我们无法基于js控制，真实项目中我们都会把这个缓存干掉。 <br>
+get请求产生缓存是因为：连续多次向相同的地址，(并且传递的参数信息也是相同的)发送请求，浏览器会把之前获取的数据从缓存中拿到返回，导致无法获取服务器最新的数据。（post不会）</p>
+
+<p>解决方案 </p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs javascript"><div class="hljs-line">xhr.open(<span class="hljs-string">'get'</span>,<span class="hljs-string">`/temp/list?lx=1000&amp;_=<span class="hljs-subst">${<span class="hljs-built_in">Math</span>.random()}</span>`</span>); <span class="hljs-comment">//=&gt; 保证每次请求的地址不完全一致：在每一次请求的末尾追加一个随机数即可（使用_作为属性名就是不想和其他的属性名ch） </span>
+</div></code></pre>
+
+<h4 id="4-什么是http报文你熟知的报文都有哪些">4. 什么是HTTP报文，你熟知的报文都有哪些！</h4>
+
+<blockquote>
+  <p>起始行：请求起始行、响应起始行 <br>
+  首部（头）：请求头、响应头、通用头 <br>
+  主体：请求主体、响应主体</p>
+</blockquote>
+
+<p><code>General 通用头</code></p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs oxygene"><div class="hljs-line">Request URL: http:/\/www.zhufengpeixun.cn <span class="hljs-comment">//请求地址</span>
+</div><div class="hljs-line">Request <span class="hljs-function"><span class="hljs-keyword">Method</span>:</span> GET   <span class="hljs-comment">//请求方式（GET / POST / DELEFT / PUT / HEAD OPTION）</span>
+</div><div class="hljs-line">Status Code: <span class="hljs-number">304</span> <span class="hljs-keyword">Not</span> Modified   <span class="hljs-comment">//响应的http状态码</span>
+</div><div class="hljs-line">Remote Address: <span class="hljs-number">162.159</span>.<span class="hljs-number">211.54</span>:<span class="hljs-number">80</span>  <span class="hljs-comment">// 主机地址（服务器外网IP地址）</span>
+</div><div class="hljs-line">Referrer Policy: <span class="hljs-keyword">unsafe</span>-url
+</div></code></pre>
+
+<p><code>Request Headers 请求头 【客户端设置，服务器接收】</code></p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs groovy"><div class="hljs-line">GET <span class="hljs-regexp">/ HTTP/</span><span class="hljs-number">1.1</span>  <span class="hljs-comment">//=&gt; 起始行（描述当前请求的一些基本信息：用的是1.1版本传输协议进行内容传输的）</span>
+</div><div class="hljs-line"><span class="hljs-string">Host:</span> www.zhufengpeixun.cn
+</div><div class="hljs-line"><span class="hljs-string">Connection:</span> keep-alive
+</div><div class="hljs-line">Cache-<span class="hljs-string">Control:</span> max-age=<span class="hljs-number">0</span>
+</div><div class="hljs-line">Upgrade-Insecure-<span class="hljs-string">Requests:</span> <span class="hljs-number">1</span>
+</div><div class="hljs-line">User-<span class="hljs-string">Agent:</span> Mozilla/<span class="hljs-number">5.0</span> (Windows NT <span class="hljs-number">10.0</span>; WOW64) 
+</div><div class="hljs-line">...
+</div><div class="hljs-line">Accept-<span class="hljs-string">Encoding:</span> gzip, deflate
+</div><div class="hljs-line">Accept-<span class="hljs-string">Language:</span> zh-CN,zh;q=<span class="hljs-number">0.9</span>
+</div><div class="hljs-line"><span class="hljs-string">Cookie:</span> ... <span class="hljs-comment">//=&gt; cookie信息一般都是放到头文件中实现和服务器端的数据通信的</span>
+</div><div class="hljs-line">If-Modified-<span class="hljs-string">Since:</span> Sun, <span class="hljs-number">06</span> May <span class="hljs-number">2018</span> <span class="hljs-number">10</span>:<span class="hljs-number">02</span>:<span class="hljs-number">42</span> GMT
+</div><div class="hljs-line">...
+</div></code></pre>
+
+<p><code>Response Headers 响应头 【服务器端设置，客户端获取】</code></p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs groovy"><div class="hljs-line">HTTP<span class="hljs-regexp">/1.1 304 Not Modified   /</span>/=&gt; 响应起始行（HTTP状态码）
+</div><div class="hljs-line"><span class="hljs-string">Date:</span> Tue, <span class="hljs-number">22</span> May <span class="hljs-number">2018</span> <span class="hljs-number">09</span>:<span class="hljs-number">20</span>:<span class="hljs-number">59</span> GMT  <span class="hljs-comment">//=&gt; 服务器响应内容时候的‘服务器端时间’（客户端获取这个时间的时候已经和真实的时间产生误差了，因为服务器返回内容到客户端接收到，也是需要时间的），并且这个时间是格林尼治时间（比北京时间慢8小时， 北京时间是 GMT+0800）</span>
+</div><div class="hljs-line"><span class="hljs-string">Connection:</span> keep-alive 
+</div><div class="hljs-line"><span class="hljs-string">ETag:</span> <span class="hljs-string">"700a6f-17f43-56b86a77513d3"</span>
+</div><div class="hljs-line"><span class="hljs-string">Vary:</span> Accept-Encoding,User-Agent
+</div><div class="hljs-line"><span class="hljs-string">Server:</span> yunjiasu-nginx  <span class="hljs-comment">//=&gt;管理web服务的工具 </span>
+</div><div class="hljs-line">CF-<span class="hljs-string">RAY:</span> <span class="hljs-number">41</span>ee35bd772192c4-SJC
+</div></code></pre>
+
+<p><code>Response [响应主体]</code></p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs"><div class="hljs-line">服务器返回的是啥就是啥
+</div></code></pre>
+
+<p><code>Request Payload / Form Data [请求主体]</code></p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs"><div class="hljs-line">客户端传递给服务器的内容
+</div></code></pre>
+
+<h4 id="5-能说下304具体怎样实现吗">5. 能说下304具体怎样实现吗？</h4>
+
+<p>not modified 设置缓存 <br>
+对于不经常更新的资源文件例如../js/html/img等，服务器会结合客户端设置304缓存，第一次加载过这些资源就缓存到客户端了，下次再获取的时候是从缓存中获取；如果资源更新了，服务器端会通过最后修改时间来强制让客户端从服务器重新拉取；基于CTRL+F5强制刷新页面，304做的缓存就没有用了</p>
+
+<h4 id="6-跨域是什么http协议中如何判断跨域如何解决跨域问题">6. 跨域是什么？http协议中如何判断跨域？如何解决跨域问题？</h4>
+
+<blockquote>
+  <p><code>跨域</code>：指的是浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是浏览器施加的安全限制。 <br>
+  <code>判断跨域</code>：检查是否同源（域名、协议、端口都相同）。 <br>
+  <code>解决方法</code>：JSONP,代理，修改header</p>
+</blockquote>
+
+<h4 id="7-http2具体内容sdpy了解么">7. HTTP2具体内容？SDPY了解么？</h4>
+
+<p>HTTP2： <br>
+多路复用（即一个tcp/ip连接可以请求多个资源） <br>
+        首部压缩（http头部压缩，减少体积） <br>
+        二进制分帧（在应用层跟传送层之间增加了一个二进制分帧层，改进传输性能，实现低延迟和高吞吐量） <br>
+        服务器端推送（服务端可以对客户端的一个请求发出多个响应，可以主动通知客户端） <br>
+        请求优先级（如果流被赋予了优先级，它就会基于这个优先级来处理，由服务器决定需要多少资源来处理该请求。） <br>
+如果http2.0全面应用，很多http1.1中的优化方案就无需用到了（譬如打包成精灵图，静态资源多域名拆分等）</p>
+
+<h4 id="8-https如何实现tslssl是什么对称加密非对称加密在什么时候对什么数据加密">8. HTTPS如何实现？tsl/ssl是什么？对称加密、非对称加密在什么时候、对什么数据加密？</h4>
+
+<ol><li rel="1"><p>浏览器请求建立SSL链接，并向服务端发送一个随机数–Client random和客户端支持的加密方法，比如RSA加密，此时是明文传输。 </p></li>
+<li rel="2"><p>服务端从中选出一组加密算法与Hash算法，回复一个随机数–Server random，并将自己的身份信息以证书的形式发回给浏览器 <br>
+（证书里包含了网站地址，非对称加密的公钥，以及证书颁发机构等信息）</p></li>
+<li rel="3"><p>浏览器收到服务端的证书后</p></li>
+</ol>
+
+<p></p><pre class="prettyprint hljs-dark"><code class="hljs asciidoc"><div class="hljs-line"><span class="hljs-bullet">- </span>验证证书的合法性（颁发机构是否合法，证书中包含的网址是否和正在访问的一样），如果证书信任，则浏览器会显示一个小锁头，否则会有提示
+</div></code></pre><p></p>
+
+<ul><li><p>用户接收证书后（不管信不信任），浏览会生产新的随机数–Premaster secret，然后证书中的公钥以及指定的加密方法加密<code>Premaster secret</code>，发送给服务器。</p></li>
+<li><p>利用Client random、Server random和Premaster secret通过一定的算法生成HTTP链接数据传输的对称加密key-<code>session key</code></p></li>
+<li><p>使用约定好的HASH算法计算握手消息，并使用生成的<code>session key</code>对消息进行加密，最后将之前生成的所有信息发送给服务端。 </p>
+
+<ol>
+<li rel="4">服务端收到浏览器的回复</li></ol></li>
+</ul>
+
+<p></p><pre class="prettyprint hljs-dark"><code class="hljs asciidoc"><div class="hljs-line"><span class="hljs-bullet">- </span>利用已知的加解密方式与自己的私钥进行解密，获取<code>Premaster secret</code>
+</div></code></pre><p></p>
+
+<ul><li><p>和浏览器相同规则生成<code>session key</code></p></li>
+<li><p>使用<code>session key</code>解密浏览器发来的握手消息，并验证Hash是否与浏览器发来的一致</p></li>
+<li><p>使用<code>session key</code>加密一段握手消息，发送给浏览器</p>
+
+<ol>
+<li rel="5">浏览器解密并计算握手消息的HASH，如果与服务端发来的HASH一致，此时握手过程结束，</li></ol></li>
+</ul>
+
+<h4 id="9-dns劫持是什么">9. DNS劫持是什么？</h4>
+
+<blockquote>
+  <p>DNS是Domain Name System的简写，即域名系统，它作为可以将域名和IP地址相互映射的一个分布式数据库，能够使人更方便的访问互联网。 <br>
+  DNS劫持就是你输入的网址明明是Google.com出来的是baidu的页面</p>
+</blockquote>
+
+<h4 id="10-封装一个ajax库">10. 封装一个AJAX库！</h4>
+
+<pre class="prettyprint hljs-dark"><code class="language-javascript hljs"><div class="hljs-line">~<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+</div><div class="hljs-line">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ajaxClass</span> </span>{
+</div><div class="hljs-line">        <span class="hljs-comment">//=&gt;SEND AJAX</span>
+</div><div class="hljs-line">        init() {
+</div><div class="hljs-line">            <span class="hljs-comment">//=&gt;THIS:EXAMPLE</span>
+</div><div class="hljs-line">            <span class="hljs-keyword">let</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest();
+</div><div class="hljs-line">            xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span> {
+</div><div class="hljs-line">                <span class="hljs-keyword">if</span> (!<span class="hljs-regexp">/^[23]\d{2}$/</span>.test(xhr.status)) <span class="hljs-keyword">return</span>;
+</div><div class="hljs-line">                <span class="hljs-keyword">if</span> (xhr.readyState === <span class="hljs-number">4</span>) {
+</div><div class="hljs-line">                    <span class="hljs-keyword">let</span> result = xhr.responseText;
+</div><div class="hljs-line">                    <span class="hljs-comment">//=&gt;DATA-TYPE</span>
+</div><div class="hljs-line">                    <span class="hljs-keyword">try</span> {
+</div><div class="hljs-line">                        <span class="hljs-keyword">switch</span> (<span class="hljs-keyword">this</span>.dataType.toUpperCase()) {
+</div><div class="hljs-line">                            <span class="hljs-keyword">case</span> <span class="hljs-string">'TEXT'</span>:
+</div><div class="hljs-line">                            <span class="hljs-keyword">case</span> <span class="hljs-string">'HTML'</span>:
+</div><div class="hljs-line">                                <span class="hljs-keyword">break</span>;
+</div><div class="hljs-line">                            <span class="hljs-keyword">case</span> <span class="hljs-string">'JSON'</span>:
+</div><div class="hljs-line">                                result = <span class="hljs-built_in">JSON</span>.parse(result);
+</div><div class="hljs-line">                                <span class="hljs-keyword">break</span>;
+</div><div class="hljs-line">                            <span class="hljs-keyword">case</span> <span class="hljs-string">'XML'</span>:
+</div><div class="hljs-line">                                result = xhr.responseXML;
+</div><div class="hljs-line">                        }
+</div><div class="hljs-line">                    } <span class="hljs-keyword">catch</span> (e) {
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">                    }
+</div><div class="hljs-line">                    <span class="hljs-keyword">this</span>.success(result);
+</div><div class="hljs-line">                }
+</div><div class="hljs-line">            };
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">            <span class="hljs-comment">//=&gt;DATA</span>
+</div><div class="hljs-line">            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.data !== <span class="hljs-literal">null</span>) {
+</div><div class="hljs-line">                <span class="hljs-keyword">this</span>.formatData();
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isGET) {
+</div><div class="hljs-line">                    <span class="hljs-keyword">this</span>.url += <span class="hljs-keyword">this</span>.querySymbol() + <span class="hljs-keyword">this</span>.data;
+</div><div class="hljs-line">                    <span class="hljs-keyword">this</span>.data = <span class="hljs-literal">null</span>;
+</div><div class="hljs-line">                }
+</div><div class="hljs-line">            }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">            <span class="hljs-comment">//=&gt;CACHE</span>
+</div><div class="hljs-line">            <span class="hljs-keyword">this</span>.isGET ? <span class="hljs-keyword">this</span>.cacheFn() : <span class="hljs-literal">null</span>;
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">            xhr.open(<span class="hljs-keyword">this</span>.method, <span class="hljs-keyword">this</span>.url, <span class="hljs-keyword">this</span>.async);
+</div><div class="hljs-line">            xhr.send(<span class="hljs-keyword">this</span>.data);
+</div><div class="hljs-line">        }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">        <span class="hljs-comment">//=&gt;CONVERT THE PASSED OBJECT DATA TO STRING DATA</span>
+</div><div class="hljs-line">        formatData() {
+</div><div class="hljs-line">            <span class="hljs-comment">//=&gt;THIS:EXAMPLE</span>
+</div><div class="hljs-line">            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Object</span>.prototype.toString.call(<span class="hljs-keyword">this</span>.data) === <span class="hljs-string">'[object Object]'</span>) {
+</div><div class="hljs-line">                <span class="hljs-keyword">let</span> obj = <span class="hljs-keyword">this</span>.data,
+</div><div class="hljs-line">                    str = <span class="hljs-string">``</span>;
+</div><div class="hljs-line">                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> obj) {
+</div><div class="hljs-line">                    <span class="hljs-keyword">if</span> (obj.hasOwnProperty(key)) {
+</div><div class="hljs-line">                        str += <span class="hljs-string">`<span class="hljs-subst">${key}</span>=<span class="hljs-subst">${obj[key]}</span>&amp;`</span>;
+</div><div class="hljs-line">                    }
+</div><div class="hljs-line">                }
+</div><div class="hljs-line">                str = str.replace(<span class="hljs-regexp">/&amp;$/g</span>, <span class="hljs-string">''</span>);
+</div><div class="hljs-line">                <span class="hljs-keyword">this</span>.data = str;
+</div><div class="hljs-line">            }
+</div><div class="hljs-line">        }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">        cacheFn() {
+</div><div class="hljs-line">            <span class="hljs-comment">//=&gt;THIS:EXAMPLE</span>
+</div><div class="hljs-line">            !<span class="hljs-keyword">this</span>.cache ? <span class="hljs-keyword">this</span>.url += <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.querySymbol()}</span>_=<span class="hljs-subst">${<span class="hljs-built_in">Math</span>.random()}</span>`</span> : <span class="hljs-literal">null</span>;
+</div><div class="hljs-line">        }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">        querySymbol() {
+</div><div class="hljs-line">            <span class="hljs-comment">//=&gt;THIS:EXAMPLE</span>
+</div><div class="hljs-line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.url.indexOf(<span class="hljs-string">'?'</span>) &gt; <span class="hljs-number">-1</span> ? <span class="hljs-string">'&amp;'</span> : <span class="hljs-string">'?'</span>;
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">    }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">    <span class="hljs-comment">//=&gt;INIT PARAMETERS</span>
+</div><div class="hljs-line">    <span class="hljs-built_in">window</span>.ajax = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">{
+</span></span></div><div class="hljs-line">        url = null,
+</div><div class="hljs-line">        method = <span class="hljs-string">'GET'</span>,
+</div><div class="hljs-line">        type = null,
+</div><div class="hljs-line">        data = null,
+</div><div class="hljs-line">        dataType = <span class="hljs-string">'JSON'</span>,
+</div><div class="hljs-line">        cache = true,
+</div><div class="hljs-line">        async = true,
+</div><div class="hljs-line">        success = null
+</div><div class="hljs-line">    }={}) {
+</div><div class="hljs-line">        <span class="hljs-keyword">let</span> _this = <span class="hljs-keyword">new</span> ajaxClass();
+</div><div class="hljs-line">        [<span class="hljs-string">'url'</span>, <span class="hljs-string">'method'</span>, <span class="hljs-string">'data'</span>, <span class="hljs-string">'dataType'</span>, <span class="hljs-string">'cache'</span>, <span class="hljs-string">'async'</span>, <span class="hljs-string">'success'</span>].forEach(<span class="hljs-function">(<span class="hljs-params">item</span>)=&gt;</span> {
+</div><div class="hljs-line">            <span class="hljs-keyword">if</span> (item === <span class="hljs-string">'method'</span>) {
+</div><div class="hljs-line">                _this.method = type === <span class="hljs-literal">null</span> ? method : type;
+</div><div class="hljs-line">                <span class="hljs-keyword">return</span>;
+</div><div class="hljs-line">            }
+</div><div class="hljs-line">            <span class="hljs-keyword">if</span> (item === <span class="hljs-string">'success'</span>) {
+</div><div class="hljs-line">                _this.success = <span class="hljs-keyword">typeof</span> success === <span class="hljs-string">'function'</span> ? success : <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>();
+</div><div class="hljs-line">                <span class="hljs-keyword">return</span>;
+</div><div class="hljs-line">            }
+</div><div class="hljs-line">            _this[item] = <span class="hljs-built_in">eval</span>(item);
+</div><div class="hljs-line">        });
+</div><div class="hljs-line">        _this.isGET = <span class="hljs-regexp">/^(GET|DELETE|HEAD)$/i</span>.test(_this.method);
+</div><div class="hljs-line">        _this.init();
+</div><div class="hljs-line">        <span class="hljs-keyword">return</span> _this;
+</div><div class="hljs-line">    };
+</div><div class="hljs-line">}();
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">----------
+</div><div class="hljs-line">~(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">anonymous</span>(<span class="hljs-params">window</span>) </span>{
+</div><div class="hljs-line">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">AJAX</span>(<span class="hljs-params">options</span>) </span>{
+</div><div class="hljs-line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> init(options);
+</div><div class="hljs-line">    }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">    <span class="hljs-keyword">let</span> init = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params">options = {}</span>) </span>{
+</div><div class="hljs-line">        <span class="hljs-comment">//=&gt;INIT PARAM</span>
+</div><div class="hljs-line">        <span class="hljs-keyword">let</span> {
+</div><div class="hljs-line">            url,
+</div><div class="hljs-line">            method = <span class="hljs-string">'GET'</span>,
+</div><div class="hljs-line">            data = <span class="hljs-literal">null</span>,
+</div><div class="hljs-line">            dataType = <span class="hljs-string">'JSON'</span>,
+</div><div class="hljs-line">            <span class="hljs-keyword">async</span> = <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">            cache = <span class="hljs-literal">true</span>,
+</div><div class="hljs-line">            success,
+</div><div class="hljs-line">            error
+</div><div class="hljs-line">        } = options;
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">        <span class="hljs-comment">//=&gt;MOUNT:把配置项挂载到实例上</span>
+</div><div class="hljs-line">        [<span class="hljs-string">'url'</span>, <span class="hljs-string">'method'</span>, <span class="hljs-string">'data'</span>, <span class="hljs-string">'dataType'</span>, <span class="hljs-string">'async'</span>, <span class="hljs-string">'cache'</span>, <span class="hljs-string">'success'</span>, <span class="hljs-string">'error'</span>].forEach(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> {
+</div><div class="hljs-line">            <span class="hljs-keyword">this</span>[item] = <span class="hljs-built_in">eval</span>(item);
+</div><div class="hljs-line">        });
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">        <span class="hljs-comment">//=&gt;SEND:发送AJAX请求</span>
+</div><div class="hljs-line">        <span class="hljs-keyword">this</span>.sendAjax();
+</div><div class="hljs-line">    };
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">    AJAX.prototype = {
+</div><div class="hljs-line">        <span class="hljs-attr">constructor</span>: AJAX,
+</div><div class="hljs-line">        init,
+</div><div class="hljs-line">        <span class="hljs-comment">//=&gt;发送AJAX请求</span>
+</div><div class="hljs-line">        sendAjax() {
+</div><div class="hljs-line">            <span class="hljs-keyword">this</span>.handleData();
+</div><div class="hljs-line">            <span class="hljs-keyword">this</span>.handleCache();
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">            <span class="hljs-comment">//=&gt;SEND</span>
+</div><div class="hljs-line">            <span class="hljs-keyword">let</span> {method, url, <span class="hljs-keyword">async</span>, error, success, data} = <span class="hljs-keyword">this</span>,
+</div><div class="hljs-line">                xhr = <span class="hljs-keyword">new</span> XMLHttpRequest;
+</div><div class="hljs-line">            xhr.open(method, url, <span class="hljs-keyword">async</span>);
+</div><div class="hljs-line">            xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+</div><div class="hljs-line">                <span class="hljs-keyword">if</span> (xhr.readyState === <span class="hljs-number">4</span>) {
+</div><div class="hljs-line">                    <span class="hljs-comment">//=&gt;ERROR</span>
+</div><div class="hljs-line">                    <span class="hljs-keyword">if</span> (!<span class="hljs-regexp">/^(2|3)\d{2}$/</span>.test(xhr.status)) {
+</div><div class="hljs-line">                        error &amp;&amp; error(xhr.statusText, xhr);
+</div><div class="hljs-line">                        <span class="hljs-keyword">return</span>;
+</div><div class="hljs-line">                    }
+</div><div class="hljs-line">                    <span class="hljs-comment">//=&gt;SUCCESS</span>
+</div><div class="hljs-line">                    <span class="hljs-keyword">let</span> result = <span class="hljs-keyword">this</span>.handlDataType(xhr);
+</div><div class="hljs-line">                    success &amp;&amp; success(result, xhr);
+</div><div class="hljs-line">                }
+</div><div class="hljs-line">            };
+</div><div class="hljs-line">            xhr.send(data);
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        <span class="hljs-comment">//=&gt;处理DATA-TYPE</span>
+</div><div class="hljs-line">        handlDataType(xhr) {
+</div><div class="hljs-line">            <span class="hljs-keyword">let</span> dataType = <span class="hljs-keyword">this</span>.dataType.toUpperCase(),
+</div><div class="hljs-line">                result = xhr.responseText;
+</div><div class="hljs-line">            <span class="hljs-keyword">switch</span> (dataType) {
+</div><div class="hljs-line">                <span class="hljs-keyword">case</span> <span class="hljs-string">'TEXT'</span>:
+</div><div class="hljs-line">                    <span class="hljs-keyword">break</span>;
+</div><div class="hljs-line">                <span class="hljs-keyword">case</span> <span class="hljs-string">'JSON'</span>:
+</div><div class="hljs-line">                    result = <span class="hljs-built_in">JSON</span>.parse(result);
+</div><div class="hljs-line">                    <span class="hljs-keyword">break</span>;
+</div><div class="hljs-line">                <span class="hljs-keyword">case</span> <span class="hljs-string">'XML'</span>:
+</div><div class="hljs-line">                    result = xhr.responseXML;
+</div><div class="hljs-line">                    <span class="hljs-keyword">break</span>;
+</div><div class="hljs-line">            }
+</div><div class="hljs-line">            <span class="hljs-keyword">return</span> result;
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        <span class="hljs-comment">//=&gt;处理CACHE</span>
+</div><div class="hljs-line">        handleCache() {
+</div><div class="hljs-line">            <span class="hljs-keyword">let</span> {url, method, cache} = <span class="hljs-keyword">this</span>;
+</div><div class="hljs-line">            <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/^GET$/i</span>.test(method) &amp;&amp; cache === <span class="hljs-literal">false</span>) {
+</div><div class="hljs-line">                <span class="hljs-comment">//=&gt;URL末尾追加时间辍</span>
+</div><div class="hljs-line">                url += <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.check()}</span>_=<span class="hljs-subst">${+(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>())}</span>`</span>;
+</div><div class="hljs-line">                <span class="hljs-keyword">this</span>.url = url;
+</div><div class="hljs-line">            }
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        <span class="hljs-comment">//=&gt;处理DATA</span>
+</div><div class="hljs-line">        handleData() {
+</div><div class="hljs-line">            <span class="hljs-keyword">let</span> {data, method} = <span class="hljs-keyword">this</span>;
+</div><div class="hljs-line">            <span class="hljs-keyword">if</span> (!data) <span class="hljs-keyword">return</span>;
+</div><div class="hljs-line">            <span class="hljs-comment">//=&gt;如果是个OBJECT对象,我们把它转换为x-www-form-urlencoded这种模式,方便后期传递给服务器</span>
+</div><div class="hljs-line">            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> data === <span class="hljs-string">'object'</span>) {
+</div><div class="hljs-line">                <span class="hljs-keyword">let</span> str = <span class="hljs-string">``</span>;
+</div><div class="hljs-line">                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> data) {
+</div><div class="hljs-line">                    <span class="hljs-keyword">if</span> (data.hasOwnProperty(key)) {
+</div><div class="hljs-line">                        str += <span class="hljs-string">`<span class="hljs-subst">${key}</span>=<span class="hljs-subst">${data[key]}</span>&amp;`</span>;
+</div><div class="hljs-line">                    }
+</div><div class="hljs-line">                }
+</div><div class="hljs-line">                data = str.substring(<span class="hljs-number">0</span>, str.length - <span class="hljs-number">1</span>);
+</div><div class="hljs-line">            }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">            <span class="hljs-comment">//=&gt;根据请求方式不一样,传递给服务器的方式也不同</span>
+</div><div class="hljs-line">            <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/^(GET|DELETE|HEAD|TRACE|OPTIONS)$/i</span>.test(method)) {
+</div><div class="hljs-line">                <span class="hljs-keyword">this</span>.url += <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.check()}</span><span class="hljs-subst">${data}</span>`</span>;
+</div><div class="hljs-line">                <span class="hljs-keyword">this</span>.data = <span class="hljs-literal">null</span>;
+</div><div class="hljs-line">                <span class="hljs-keyword">return</span>;
+</div><div class="hljs-line">            }
+</div><div class="hljs-line">            <span class="hljs-keyword">this</span>.data = data;<span class="hljs-comment">//=&gt;POST系列</span>
+</div><div class="hljs-line">        },
+</div><div class="hljs-line">        <span class="hljs-comment">//=&gt;检测URL中是否存在问号</span>
+</div><div class="hljs-line">        check() {
+</div><div class="hljs-line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.url.indexOf(<span class="hljs-string">'?'</span>) &gt; <span class="hljs-number">-1</span> ? <span class="hljs-string">'&amp;'</span> : <span class="hljs-string">'?'</span>;
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">    };
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">    init.prototype = AJAX.prototype;
+</div><div class="hljs-line">    <span class="hljs-built_in">window</span>.ajax = AJAX;
+</div><div class="hljs-line">})(<span class="hljs-built_in">window</span>);
+</div><div class="hljs-line"><wbr>
+</div></code></pre></div></body></html>
